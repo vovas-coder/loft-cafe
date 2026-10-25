@@ -1,8 +1,7 @@
-
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -77,16 +76,9 @@ a {
   color: var(--muted);
 }
 
+/* Логотип без декоративного значка */
 .brand-mark {
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-family: "Playfair Display", serif;
-  font-size: 26px;
-  color: #a57b43;
+  display: none !important;
 }
 
 .nav {
@@ -138,16 +130,11 @@ a {
 
 .eyebrow {
   color: #e7c58f;
-  display: flex;
-  align-items: center;
-  gap: 10px;
   margin-bottom: 25px;
 }
 
 .eyebrow span {
-  width: 28px;
-  height: 1px;
-  background: var(--gold);
+  display: none;
 }
 
 h1,
@@ -186,9 +173,8 @@ h2 em,
 
 .button {
   display: inline-flex;
-  gap: 25px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 16px 20px;
   font-size: 12px;
   font-weight: 700;
@@ -213,9 +199,11 @@ h2 em,
   font-weight: 600;
 }
 
-.text-link span {
-  margin-left: 9px;
-  color: var(--gold);
+/* Ховаємо стрілки біля посилань і кнопок */
+.button span,
+.text-link span,
+.under-link span {
+  display: none !important;
 }
 
 .hero-rating {
@@ -232,18 +220,15 @@ h2 em,
   color: white;
 }
 
+/* Без зірочок рейтингу */
 .stars {
-  letter-spacing: 2px;
-  color: var(--gold);
+  display: none !important;
 }
 
 .hero-note {
   position: absolute;
   right: 30px;
   bottom: 30px;
-  display: flex;
-  align-items: center;
-  gap: 13px;
   font-size: 9px;
   letter-spacing: 1.7px;
   color: rgba(255, 255, 255, 0.75);
@@ -251,9 +236,7 @@ h2 em,
 }
 
 .hero-note i {
-  height: 48px;
-  width: 1px;
-  background: var(--gold);
+  display: none;
 }
 
 /* INTRO */
@@ -301,11 +284,6 @@ h2 em,
   padding-bottom: 7px;
 }
 
-.under-link span {
-  margin-left: 15px;
-  color: #a57b43;
-}
-
 .feature-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -319,7 +297,6 @@ h2 em,
 .feature-strip > div {
   display: flex;
   align-items: center;
-  gap: 15px;
   padding-left: 22px;
   border-right: 1px solid var(--line);
 }
@@ -332,8 +309,9 @@ h2 em,
   border: 0;
 }
 
-/* Прибираємо значки в перевагах */
-.feature-icon {
+/* Без значків у перевагах */
+.feature-icon,
+.feature-icon svg {
   display: none !important;
 }
 
@@ -473,10 +451,7 @@ h2 em,
 }
 
 .quote-mark {
-  font-family: "Playfair Display", serif;
-  font-size: 70px;
-  color: var(--gold);
-  line-height: 0.8;
+  display: none !important;
 }
 
 .quote-inner p {
@@ -536,9 +511,15 @@ h2 em,
   padding-top: 0;
 }
 
-/* Повністю ховаємо значки контактів */
+.contact-row:last-child {
+  border-bottom: 0;
+}
+
+/* Без значків контактів */
 .contact-icon,
-.contact-icon svg {
+.contact-icon svg,
+.contact-row svg,
+.contact-row img {
   display: none !important;
 }
 
@@ -599,7 +580,7 @@ h2 em,
   font-size: 18px;
 }
 
-.rating-row > span:last-child {
+.rating-row > span {
   font-size: 11px;
   color: var(--muted);
 }
@@ -631,6 +612,11 @@ h2 em,
 .back-top {
   font-size: 11px;
   color: var(--gold);
+}
+
+.back-top span,
+.back-top svg {
+  display: none !important;
 }
 
 .copyright {
@@ -695,11 +681,6 @@ h2 em,
 
   .brand {
     font-size: 16px;
-  }
-
-  .brand-mark {
-    width: 37px;
-    height: 37px;
   }
 
   .menu-toggle {
@@ -886,11 +867,6 @@ h2 em,
 
   .contact-card {
     padding: 23px 19px;
-  }
-
-  .contact-row {
-    grid-template-columns: 1fr;
-    gap: 0;
   }
 
   .hours {
